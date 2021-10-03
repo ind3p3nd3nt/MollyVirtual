@@ -3,7 +3,7 @@ VARIANT=kde
 MEMORY=1024M
 DISKSIZE=100G
 CPUS=$(getconf _NPROCESSORS_ONLN)
-ACCELSUPPORT=$(lscpu | grep Virt)
+ACCELSUPPORT=$(lscpu | grep VT-x)
 echo "You are installing MollyEskamLinux $VARIANT variant with $MEMORY memory in a QEMU Virtual Machine";
 if [ -z "$ACCELSUPPORT" ]; then echo "KVM Acceleration is not supported by your processor"; 
 else echo "$ACCELSUPPORT"
